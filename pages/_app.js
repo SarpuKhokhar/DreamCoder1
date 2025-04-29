@@ -1,5 +1,6 @@
 // pages/_app.js
-import '../styles/globals.css'; // Ensure this is added to your _app.js file
+import '../src/app/globals.css'
+// Ensure this is added to your _app.js file
 import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }) {
