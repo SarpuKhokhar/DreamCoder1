@@ -1,0 +1,40 @@
+/* styles/globals.css */
+
+/* Import TailwindCSS first */
+@import "tailwindcss";
+
+/* Root variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-sans: 'Cal Sans', sans-serif;
+  --font-mono: monospace;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Global styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+}
+
+/* Anchor hover effect */
+a:hover {
+  border-bottom: 2px solid #FFA500; /* Orange underline on hover */
+  transition: all 0.3s ease;
+}
+
+/* Apply font globally */
+* {
+  font-family: var(--font-sans);
+} 
