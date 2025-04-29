@@ -11,27 +11,31 @@ export default function Banner() {
         backgroundAttachment: 'fixed',
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-30"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black opacity-50"></div>
 
-      <div className="flex justify-center md:justify-start items-center h-full text-center md:text-left text-white px-4 md:px-8">
-        <div className="z-10 max-w-full md:max-w-2xl">
-          {/* Main Heading with Orange Highlight */}
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-            We're your go-to experts for{' '}
-            <span className="text-orange-500">top-notch mobile and web solutions</span>.
+      {/* Centered Content */}
+      <div className="flex justify-center items-center h-full text-center px-4 relative z-10">
+        <div className="max-w-3xl">
+          {/* Animated Heading */}
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-white leading-snug transition duration-300 hover:scale-105 hover:text-orange-400">
+            We're your go-to place to{' '}
+            <span className="text-orange-500 underline decoration-dotted hover:text-white transition duration-300">
+              Learn Coding
+            </span>{' '}
+            the right way.
+            <br />
+            <span className="text-orange-400 text-2xl md:text-3xl block mt-2">
+              Master web & mobile development with hands-on projects.
+            </span>
           </h2>
 
-          {/* Subheading */}
-          <p className="text-lg md:text-xl mb-6 leading-relaxed">
-            We help businesses thrive by creating top-notch digital products, platforms, and experiences that supercharge their growth journey.
-          </p>
-
-          {/* Button */}
+          {/* Animated Button */}
           <a
             href="#"
-            className="inline-block bg-orange-500 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-orange-600"
+            className="mt-8 inline-block bg-orange-500 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:bg-white hover:text-orange-500 transition-all duration-300 hover:scale-105"
           >
-            Get a Free Quote
+            🚀 Get Started
           </a>
         </div>
       </div>

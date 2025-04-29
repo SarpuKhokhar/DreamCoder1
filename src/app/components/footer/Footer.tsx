@@ -2,7 +2,7 @@
 
 export const Footer = () => {
   return (
-    <footer className="bg-orange-400 text-white p-8 font-sans rounded-tl-[50px] rounded-tr-[50px]">
+    <footer className="bg-black-400 text-white p-8 font-sans  ">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row">
         {/* Left Info */}
         <div className="bg-white text-gray-800 p-6 rounded-[30px] mb-6 md:mb-0 md:mr-8 w-full md:w-1/3">
