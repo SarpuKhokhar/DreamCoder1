@@ -99,6 +99,18 @@ export const LanguageScroller = () => {
                   objectFit: "contain",
                   backgroundColor: "#fff",
                   borderRadius: "8px",
+                  transition: "all 0.3s ease-in-out",
+                  border: "2px solid transparent",
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = "scale(1.2)";
+                  e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
+                  e.currentTarget.style.borderColor = "#3b82f6"; // blue-500
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = "scale(1)";
+                  e.currentTarget.style.boxShadow = "none";
+                  e.currentTarget.style.borderColor = "transparent";
                 }}
               />
             </a>
