@@ -1,5 +1,7 @@
 "use client";
 
+import { Link } from "lucide-react";
+
 export const Footer = () => {
   return (
     <footer className="bg-black-400 text-white p-8 font-sans  ">
@@ -7,7 +9,9 @@ export const Footer = () => {
         {/* Left Info */}
         <div className="bg-white text-gray-800 p-6 rounded-[30px] mb-6 md:mb-0 md:mr-8 w-full md:w-1/3">
           <div className="flex items-center mb-2">
-            <h1 className="text-2xl font-bold">Birbal AI</h1>
+          <div className="text-2xl font-bold text-black">   Dream<span className="text-orange-500">Coder</span></div>
+         
+        
             <a
               href="https://www.linkedin.com"
               target="_blank"

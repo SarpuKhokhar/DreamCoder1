@@ -28,16 +28,66 @@ body {
   padding: 0;
 }
 
-/* Anchor hover effect */
-a:hover {
-  border-bottom: 2px solid #FFA500; /* Orange underline on hover */
-  transition: all 0.3s ease;
-}
-
 /* Apply font globally */
 * {
   font-family: var(--font-sans);
-} 
+}
 html {
   scroll-behavior: smooth;
+}
+
+/* 🔥 Animation for Learn Coding */
+/* DreamCoder animation - Bounce and Scale */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-30px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) translateY(10px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.bounce-in {
+  opacity: 0;
+  animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+}
+
+/* Infinite Loop for Learn Coding */
+@keyframes loopAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loop-animation {
+  animation: loopAnimation 3s infinite ease-in-out;
+}
+
+/* Fade-in for rest of content */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up-delayed {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 2s;
 }
