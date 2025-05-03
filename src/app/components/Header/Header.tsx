@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import {
   FaMobileAlt, FaReact, FaNodeJs, FaLaptopCode, FaPalette,
@@ -8,6 +8,27 @@ import {
 } from 'react-icons/fa';
 import { SiKotlin, SiSwift, SiAndroid, SiApple } from 'react-icons/si';
 import Link from 'next/link';
+
+type NavLinkProps = {
+  href: string;
+  label: string;
+};
+
+type NavLinkMobileProps = {
+  href: string;
+  label: string;
+  toggleNav: () => void;
+};
+
+type DropdownSectionType = {
+  title: string;
+  items: [ReactNode, string][];
+};
+
+type DropdownProps = {
+  label: string;
+  sections: DropdownSectionType[];
+};
 
 export default function Header() {
   const [navOpen, setNavOpen] = useState(false);
@@ -97,7 +118,7 @@ export default function Header() {
   );
 }
 
-function NavLink({ href, label }) {
+function NavLink({ href, label }: NavLinkProps) {
   return (
     <Link href={href} className="hover:text-orange-500 text-black transition-colors duration-300">
       {label}
@@ -105,15 +126,19 @@ function NavLink({ href, label }) {
   );
 }
 
-function NavLinkMobile({ href, label, toggleNav }) {
+function NavLinkMobile({ href, label, toggleNav }: NavLinkMobileProps) {
   return (
-    <Link href={href} onClick={toggleNav} className="hover:text-orange-500 text-black transition-colors duration-300">
+    <Link
+      href={href}
+      onClick={toggleNav}
+      className="hover:text-orange-500 text-black transition-colors duration-300"
+    >
       {label}
     </Link>
   );
 }
 
-function Dropdown({ label, sections }) {
+function Dropdown({ label, sections }: DropdownProps) {
   return (
     <div className="relative group">
       <button className="hover:text-orange-500 flex items-center text-black transition-colors duration-300">
@@ -130,7 +155,7 @@ function Dropdown({ label, sections }) {
   );
 }
 
-function DropdownSection({ title, items }) {
+function DropdownSection({ title, items }: DropdownSectionType) {
   return (
     <div className="bg-gray-50 p-6 rounded-lg">
       <h3 className="text-orange-500 font-bold mb-4">{title}</h3>
@@ -145,70 +170,68 @@ function DropdownSection({ title, items }) {
   );
 }
 
-const servicesSections = [
+const servicesSections: DropdownSectionType[] = [
   {
     title: 'Mobile Development',
     items: [
-      [<SiKotlin />, 'Kotlin Mobile App Development'],
-      [<SiSwift />, 'Swift UI'],
-      [<FaReact />, 'React Native Development'],
-      [<FaMobileAlt />, 'Flutter Development']
+      [<SiKotlin key="kotlin" />, 'Kotlin Mobile App Development'],
+      [<SiSwift key="swift" />, 'Swift UI'],
+      [<FaReact key="react-native" />, 'React Native Development'],
+      [<FaMobileAlt key="flutter" />, 'Flutter Development']
     ]
   },
   {
     title: 'Website Development',
     items: [
-      [<FaReact />, 'Next.js Development'],
-      [<FaNodeJs />, 'Node.js Development'],
-      [<FaLaptopCode />, 'Frontend Web Development'],
-      [<FaLaptopCode />, 'Tailored Web Solutions']
+      [<FaReact key="nextjs" />, 'Next.js Development'],
+      [<FaNodeJs key="nodejs" />, 'Node.js Development'],
+      [<FaLaptopCode key="frontend" />, 'Frontend Web Development'],
+      [<FaLaptopCode key="solutions" />, 'Tailored Web Solutions']
     ]
   },
   {
     title: 'Website Design',
     items: [
-      [<FaPalette />, 'Dark Mode Design'],
-      [<FaPalette />, 'Responsive Design'],
-      [<FaPalette />, 'Web Designing']
+      [<FaPalette key="darkmode" />, 'Dark Mode Design'],
+      [<FaPalette key="responsive" />, 'Responsive Design'],
+      [<FaPalette key="designing" />, 'Web Designing']
     ]
   },
   {
     title: 'Digital Marketing',
     items: [
-      [<FaBullhorn />, 'Visual Storytelling'],
-      [<FaFileAlt />, 'Content Marketing'],
-      [<FaBullhorn />, 'Digital Marketing']
+      [<FaBullhorn key="storytelling" />, 'Visual Storytelling'],
+      [<FaFileAlt key="content" />, 'Content Marketing'],
+      [<FaBullhorn key="marketing" />, 'Digital Marketing']
     ]
   }
 ];
 
-const packagesSections = [
+const packagesSections: DropdownSectionType[] = [
   {
     title: 'Mobile Application',
     items: [
-      [<FaReact />, 'Hybrid App Development'],
-      [<SiAndroid />, 'Android Native Development'],
-      [<SiApple />, 'iOS Native Development']
+      [<FaReact key="hybrid" />, 'Hybrid App Development'],
+      [<SiAndroid key="android" />, 'Android Native Development'],
+      [<SiApple key="ios" />, 'iOS Native Development']
     ]
   },
   {
     title: 'Website Development',
     items: [
-      [<FaLaptopCode />, 'CMS Development'],
-      [<FaShoppingCart />, 'E-Commerce Development']
+      [<FaLaptopCode key="cms" />, 'CMS Development'],
+      [<FaShoppingCart key="ecommerce" />, 'E-Commerce Development']
     ]
   },
   {
     title: 'Website Design',
-    items: [
-      [<FaPalette />, 'Website Design']
-    ]
+    items: [[<FaPalette key="webdesign" />, 'Website Design']]
   },
   {
     title: 'Digital Marketing',
     items: [
-      [<FaBullhorn />, 'PPC Services'],
-      [<FaBullhorn />, 'SEM Services']
+      [<FaBullhorn key="ppc" />, 'PPC Services'],
+      [<FaBullhorn key="sem" />, 'SEM Services']
     ]
   }
 ];
