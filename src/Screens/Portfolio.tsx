@@ -16,7 +16,7 @@ export default function Portfolio() {
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-black">Portfolio</h1>
+          <h1 className="text-4xl font-bold text-orange-500">Portfolio</h1>
         </div>
 
         {/* Category Tabs */}

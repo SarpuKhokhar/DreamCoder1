@@ -1,20 +1,9 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
 import Header from "./components/Header/Header";
 import { Footer } from "./components/footer/Footer";
 import { LanguageScroller } from "./components/LanguageScroller/LanguageScroller";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "DreamCoder - Digital Solutions",
@@ -23,12 +12,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className="font-roboto antialiased">
         <Header />
-        <main className="pt-16"> {/* Add padding-top to account for fixed header */}
+        <main className="pt-16">
           {children}
           <LanguageScroller />
         </main>

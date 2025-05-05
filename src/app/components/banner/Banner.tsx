@@ -14,13 +14,10 @@ export default function Banner() {
         backgroundAttachment: 'fixed',
       }}
     >
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
-
-      {/* Centered Content */}
       <div className="flex justify-center items-center h-full text-center px-4 relative z-10">
         <div className="max-w-3xl">
-          {/* DreamCoder animation */}
+
           <div className="text-5xl md:text-6xl font-extrabold mb-8 text-orange-400 underline decoration-dotted">
             {animatedText.split('').map((char, i) => (
               <span
@@ -32,10 +29,8 @@ export default function Banner() {
               </span>
             ))}
           </div>
-
-          {/* Main content with new Learn Coding animation */}
-          <div className="fade-in-up-delayed">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-snug">
+          <div className="fade-in-up-delayed mb-30">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-snug ">
               We're your go-to place to{' '}
               <span className="text-orange-500 underline decoration-dotted whitespace-nowrap">
                 <span className="wave-animation">
@@ -43,7 +38,7 @@ export default function Banner() {
                     <span
                       key={i}
                       className="inline-block"
-                      style={{ 
+                      style={{
                         animationDelay: `${i * 0.1}s`,
                       }}
                     >
@@ -58,7 +53,11 @@ export default function Banner() {
             <p className="text-orange-300 text-2xl md:text-3xl mt-4">
               Master web & mobile development with hands-on projects.
             </p>
+            {/* <p className="font-roboto text-2xl">Yeh Roboto Condensed Medium font hai</p> */}
 
+            <p className="font-roboto text-2xl">
+  Yeh Roboto Italic font ka text hai
+</p>
             <a
               href="#"
               className="mt-8 inline-block bg-orange-500 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:bg-white hover:text-orange-500 transition-all duration-300 hover:scale-105"

@@ -12,8 +12,8 @@ const AboutUs = () => {
         <div className="flex flex-col-reverse md:flex-row items-center justify-between max-w-7xl mx-auto">
           {/* Left Content */}
           <div className="w-full md:w-1/2 mt-10 md:mt-0">
-            <h4 className="text-orange-500 text-sm font-semibold mb-2">About Us</h4>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+          <h4 className="text-orange-500 text-2xl font-semibold mb-4 ml-45">About Us</h4>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
               We are Driven to <span className="text-orange-500">Propel Business Growth</span> Beyond Limits.
             </h2>
             <p className="text-gray-600 text-base mb-4">

@@ -39,13 +39,12 @@ export const Footer = () => {
                 <li>Artificial Intelligence & ML</li>
                 <li>Data Engineering</li>
                 <li>Custom Software Development</li>
-                <li>Hire Birbal’s Developers</li>
+                <li>Hire DreamCoder’s Developers</li>
               </ul>
             </div>
             <div>
               <h2 className="font-bold mb-4 uppercase">Success Stories</h2>
               <ul className="space-y-2 text-sm">
-                <li>Enterprise Applications</li>
                 <li>Mobile Apps</li>
                 <li>UI/UX Design</li>
               </ul>
@@ -54,9 +53,12 @@ export const Footer = () => {
               <h2 className="font-bold mb-4 uppercase">Career</h2>
               <ul className="space-y-2 text-sm">
                 <li>Full Stack Developer</li>
+                <li>JavaScript Developer</li>
+                <li>Full Stack Web Developer</li>
+                <li>Full Stack Flutter Developer</li>
+                <li>React Native Developer</li>
                 <li>React Js Developer</li>
-                <li>NFT Developer</li>
-                <li>Metaverse Developer</li>
+                
               </ul>
             </div>
           </div>
@@ -65,7 +67,7 @@ export const Footer = () => {
 
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <p className="text-sm">©2025 Birbal AI, All Rights Reserved.</p>
+              <p className="text-sm">Ram Hospital Second Right Merta City</p>
             </div>
             <div>
               <button className="bg-white text-green-600 px-4 py-2 rounded-full hover:bg-gray-200 transition-colors flex items-center">
