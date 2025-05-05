@@ -16,14 +16,18 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve", // updated from "preserve" to "react-jsx"
+    "jsx": "react-jsx", // updated from "preserve" to "react-jsx"
     "noEmit": true,
     "incremental": true,
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "baseUrl": ".", // Ensure baseUrl is set
+    "paths": {
+      "@/*": ["src/*"] // Add this line to configure alias
+    }
   },
   "include": [
     "**/*.ts",
