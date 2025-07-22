@@ -28,26 +28,28 @@ const languages = [
   { name: "Next.js", src: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg", url: "https://www.w3schools.com/nextjs/" },
 ];
 
-export default function Industries() {   
-  return (     
-    <div className="min-h-screen bg-gray-50 py-10 px-4 bg-white border-t-4 border-orange-500 rounded-xl p-4 items-center shadow-lg hover:shadow-xl hover:bg-gray-100 transition-all duration-300">       
-      <h1 className="text-3xl font-bold text-center mb-8 text-black">Languages We Serve</h1>       
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">         
-        {languages.map((lang, index) => (           
-          <a             
-            key={index}             
-            href={lang.url}             
-            target="_blank"             
-            rel="noopener noreferrer"             
-            className="bg-white border-t-4 rounded-xl p-4 flex flex-col items-center shadow-md hover:shadow-xl hover:scale-105 hover:bg-orange-500 hover:text-white transition-all duration-300 transform-gpu ease-out"           
-          >             
-            <div className="w-16 h-16 flex items-center justify-center bg-white p-2 rounded-full shadow-lg hover:scale-110 transform transition-all duration-300">               
-              <Image src={lang.src} alt={lang.name} width={50} height={50} className="object-contain" />             
-            </div>             
-            <p className="mt-2 font-bold text-center text-sm text-black">{lang.name}</p>           
-          </a>         
-        ))}       
-      </div>     
-    </div>   
-  ); 
+export default function Industries() {
+  return (
+    <div className="min-h-screen bg-gray-50 py-10 px-4 bg-white border-t-4 border-black rounded-xl p-4 items-center shadow-lg hover:shadow-xl hover:bg-gray-100 transition-all duration-300">
+      <h1 className="text-3xl font-bold text-center mb-8 text-black">Languages We Serve</h1>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+        {languages.map((lang, index) => (
+          <a
+            key={index}
+            href={lang.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group bg-white border-t-4 rounded-xl p-4 flex flex-col items-center shadow-md hover:shadow-xl hover:scale-105 hover:bg-black transition-all duration-300 transform-gpu ease-out"
+          >
+            <div className="w-16 h-16 flex items-center justify-center bg-white p-2 rounded-full shadow-lg hover:scale-110 transform transition-all duration-300">
+              <Image src={lang.src} alt={lang.name} width={50} height={50} className="object-contain" />
+            </div>
+            <p className="mt-2 font-bold text-center text-sm text-black group-hover:text-white">
+              {lang.name}
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
 }

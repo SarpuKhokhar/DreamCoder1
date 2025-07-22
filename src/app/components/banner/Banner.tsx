@@ -1,88 +1,90 @@
 'use client';
+import React, { useEffect, useState } from 'react';
+
+const images = [
+  "/assets/bgimage.png",
+  "/assets/image5.png",
+  "/assets/image7.png",
+];
 
 const animatedText = "DreamCoder";
 const learnCodingText = "Learn Coding";
 
 export default function Banner() {
-  return (
-    <section
-      className="relative bg-cover bg-center h-screen bg-no-repeat"
-      style={{
-        backgroundImage: 'url(/assets/bgimage.png)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
-    >
-      <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="flex justify-center items-center h-full text-center px-4 relative z-10">
-        <div className="max-w-3xl">
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-          <div className="text-5xl md:text-6xl font-extrabold mb-8 text-orange-400 underline decoration-dotted">
-            {animatedText.split('').map((char, i) => (
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 4000); // every 4 seconds
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center px-4 text-white">
+      {/* Background Image - Slideshow */}
+      <div className="absolute inset-0 z-0 transition-opacity duration-1000">
+        {images.map((src, index) => (
+          <img
+            key={index}
+            src={src}
+            alt={`bg-${index}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Centered Content */}
+      <div className="z-20 text-center max-w-4xl px-4">
+        <div className="text-5xl md:text-7xl font-extrabold mb-8 underline decoration-dotted">
+          {animatedText.split('').map((char, i) => (
+            <span
+              key={i}
+              className="inline-block animate-bounce"
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+              {char}
+            </span>
+          ))}
+        </div>
+
+        <h2 className="text-3xl md:text-5xl font-bold leading-snug">
+          We're your go-to place to{' '}
+          <span className="underline decoration-dotted wave-animation whitespace-nowrap">
+            {learnCodingText.split('').map((char, i) => (
               <span
                 key={i}
-                className="inline-block bounce-in"
+                className="inline-block"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
                 {char}
               </span>
             ))}
-          </div>
-          <div className="fade-in-up-delayed mb-30">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-snug ">
-              We're your go-to place to{' '}
-              <span className="text-orange-500 underline decoration-dotted whitespace-nowrap">
-                <span className="wave-animation">
-                  {learnCodingText.split('').map((char, i) => (
-                    <span
-                      key={i}
-                      className="inline-block"
-                      style={{
-                        animationDelay: `${i * 0.1}s`,
-                      }}
-                    >
-                      {char}
-                    </span>
-                  ))}
-                </span>
-              </span>{' '}
-              the right way.
-            </h2>
+          </span>{' '}
+          the right way.
+        </h2>
 
-            <p className="text-orange-300 text-2xl md:text-3xl mt-4">
-              Master web & mobile development with hands-on projects.
-            </p>
-            {/* <p className="font-roboto text-2xl">Yeh Roboto Condensed Medium font hai</p> */}
+        <p className="text-lg md:text-2xl mt-6 font-medium">
+          Master web & mobile development with hands-on projects.
+        </p>
 
-            <p className="font-roboto text-2xl">
-  Yeh Roboto Italic font ka text hai
-</p>
-            <a
-              href="#"
-              className="mt-8 inline-block bg-orange-500 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-lg hover:bg-white hover:text-orange-500 transition-all duration-300 hover:scale-105"
-            >
-              🚀 Get Started
-            </a>
-          </div>
-        </div>
+        <a
+          href="#"
+          className="mt-10 inline-block bg-white text-black px-8 py-4 rounded-xl text-lg font-semibold shadow-lg border border-gray-300 transition-all duration-300 hover:bg-gray-800 hover:text-gray-200 hover:scale-105"
+        >
+          🚀 Get Started
+        </a>
       </div>
 
-      {/* Animation styles */}
+      {/* CSS Animations */}
       <style jsx>{`
         @keyframes wave {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          25% {
-            transform: translateY(-10px);
-          }
-          50% {
-            transform: translateY(0);
-          }
-          75% {
-            transform: translateY(5px);
-          }
+          0%, 100% { transform: translateY(0); }
+          25% { transform: translateY(-10px); }
+          50% { transform: translateY(0); }
+          75% { transform: translateY(5px); }
         }
         .wave-animation span {
           display: inline-block;

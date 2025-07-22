@@ -9,8 +9,6 @@ import {
 import { SiKotlin, SiSwift, SiAndroid, SiApple } from 'react-icons/si';
 import Link from 'next/link';
 
-// Type definitions
-
 type NavLinkProps = { href: string; label: string; };
 type NavLinkMobileProps = { href: string; label: string; toggleNav: () => void; };
 type DropdownSectionType = { title: string; items: [ReactNode, string][]; };
@@ -48,9 +46,9 @@ export default function Header() {
   return (
     <>
       <header className="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
-        <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-          <Link href="/" className="text-2xl font-bold text-black">
-            Dream<span className="text-orange-500">Coder</span>
+        <div className="max-w-6xl mx-auto flex justify-between items-center p-4 ">
+          <Link href="/" className="text-2xl font-bold text-black hover:text-gray-500 ">
+            DreamCoder
           </Link>
 
           <nav className="hidden md:flex space-x-6 font-medium text-sm items-center">
@@ -61,7 +59,7 @@ export default function Header() {
             <NavLink href="/portfolio" label="Portfolio" />
             <button
               onClick={handleContactClick}
-              className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded transition-all duration-300"
+              className="bg-black hover:bg-gray-500 text-white px-4 py-2 rounded transition-all duration-300"
             >
               Contact
             </button>
@@ -76,7 +74,7 @@ export default function Header() {
 
         <div className="w-full bg-gray-200 h-1">
           <div
-            className="bg-orange-700 h-full transition-all duration-300 ease-out"
+            className="bg-black h-full transition-all duration-300 ease-out"
             style={{ width: `${scrollProgress * 100}%` }}
           ></div>
         </div>
@@ -91,7 +89,7 @@ export default function Header() {
               <NavLinkMobile href="/portfolio" label="Portfolio" toggleNav={toggleNav} />
               <button
                 onClick={handleContactClick}
-                className="bg-orange-500 hover:bg-orange-600 text-white text-center px-4 py-2 rounded transition-all duration-300"
+                className="bg-black hover:bg-gray-900 text-white text-center px-4 py-2 rounded transition-all duration-300"
               >
                 Contact
               </button>
@@ -100,7 +98,6 @@ export default function Header() {
         )}
       </header>
 
-      {/* CONTACT MODAL */}
       {showContactModal && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
@@ -124,7 +121,7 @@ export default function Header() {
                   We love questions and feedback — and we're always happy to help! Here’s how you can reach us...
                 </p>
                 <div className="bg-gray-100 p-4 rounded flex items-center gap-3">
-                  <FaEnvelope className="text-purple-600" />
+                  <FaEnvelope className="text-gray-700" />
                   <input
                     type="email"
                     placeholder="contact@company.com"
@@ -132,7 +129,7 @@ export default function Header() {
                   />
                 </div>
                 <div className="bg-gray-100 p-4 rounded flex items-center gap-3">
-                  <FaPhoneAlt className="text-purple-600" />
+                  <FaPhoneAlt className="text-gray-700" />
                   <input
                     type="text"
                     placeholder="(123) 123-1233-21"
@@ -148,7 +145,7 @@ export default function Header() {
                     id="name"
                     type="text"
                     placeholder="Enter your name"
-                    className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-800 placeholder:font-medium"
+                    className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-400 placeholder:text-gray-800 placeholder:font-medium"
                   />
                 </div>
                 <div className="space-y-1">
@@ -157,7 +154,7 @@ export default function Header() {
                     id="email"
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-800 placeholder:font-medium"
+                    className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-400 placeholder:text-gray-800 placeholder:font-medium"
                   />
                 </div>
                 <div className="space-y-1">
@@ -166,7 +163,7 @@ export default function Header() {
                     id="company"
                     type="text"
                     placeholder="Company name"
-                    className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-800 placeholder:font-medium"
+                    className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-gray-400 placeholder:text-gray-800 placeholder:font-medium"
                   />
                 </div>
                 <div className="space-y-1">
@@ -174,14 +171,14 @@ export default function Header() {
                   <textarea
                     id="message"
                     placeholder="Leave us a message"
-                    className="w-full border border-gray-300 p-2 rounded h-24 focus:outline-none focus:ring-2 focus:ring-orange-500 placeholder:text-gray-800 placeholder:font-medium"
+                    className="w-full border border-gray-300 p-2 rounded h-24 focus:outline-none focus:ring-2 focus:ring-gray-400 placeholder:text-gray-800 placeholder:font-medium"
                   />
                 </div>
                 <div className="flex items-center gap-2">
                   <input type="checkbox" id="not-robot" />
                   <label htmlFor="not-robot" className="text-sm text-gray-600">I’m not a robot</label>
                 </div>
-                <button className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">
+                <button className="bg-black text-white px-4 py-2 rounded hover:bg-gray-900">
                   Send Message
                 </button>
               </div>
@@ -195,7 +192,7 @@ export default function Header() {
 
 function NavLink({ href, label }: NavLinkProps) {
   return (
-    <Link href={href} className="hover:text-orange-500 text-black transition-colors duration-300">
+    <Link href={href} className="hover:text-gray-600 text-black transition-colors duration-300">
       {label}
     </Link>
   );
@@ -206,7 +203,7 @@ function NavLinkMobile({ href, label, toggleNav }: NavLinkMobileProps) {
     <Link
       href={href}
       onClick={toggleNav}
-      className="hover:text-orange-500 text-black transition-colors duration-300"
+      className="hover:text-gray-600 text-black transition-colors duration-300"
     >
       {label}
     </Link>
@@ -216,7 +213,7 @@ function NavLinkMobile({ href, label, toggleNav }: NavLinkMobileProps) {
 function Dropdown({ label, sections }: DropdownProps) {
   return (
     <div className="relative group">
-      <button className="hover:text-orange-500 flex items-center text-black transition-colors duration-300">
+      <button className="hover:text-gray-600 flex items-center text-black transition-colors duration-300">
         {label} <span className="ml-1 text-xs">▼</span>
       </button>
       <div className="hidden group-hover:flex fixed left-0 right-0 bg-white shadow-lg mt-4 p-25 z-40">
@@ -233,11 +230,11 @@ function Dropdown({ label, sections }: DropdownProps) {
 function DropdownSection({ title, items }: DropdownSectionType) {
   return (
     <div className="bg-gray-50 p-6 rounded-lg">
-      <h3 className="text-orange-500 font-bold mb-4">{title}</h3>
+      <h3 className="text-gray-700 font-bold mb-4">{title}</h3>
       <ul className="space-y-3">
         {items.map(([icon, label], i) => (
-          <li key={i} className="flex items-center gap-2 text-gray-700 text-sm hover:text-orange-500 transition-colors">
-            <span className="text-orange-400">{icon}</span> {label}
+          <li key={i} className="flex items-center gap-2 text-gray-700 text-sm hover:text-gray-600 transition-colors">
+            <span className="text-gray-600">{icon}</span> {label}
           </li>
         ))}
       </ul>
